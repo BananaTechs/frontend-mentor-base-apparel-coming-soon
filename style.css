@@ -1,0 +1,180 @@
+:root {
+    --desaturatedRed: hsl(0, 36%, 70%);
+    --softRed: hsl(0, 93%, 68%);
+
+    --darkGreyishRed: hsl(0, 6%, 24%);
+
+    --gradient1: linear-gradient(135deg, hsl(0, 0%, 100%) 0%, hsl(0, 100%, 98%)) 100%;
+    --gradient2: linear-gradient(135deg, hsl(0, 80%, 86%) 0%, hsl(0, 74%, 74%)) 100%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*---------------------- Body and Images ----------------------*/
+
+body {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: center;
+    color: var(--desaturatedRed);
+    font-weight: 400;
+    line-height: 1.7rem;
+    background: var(--gradient1);
+}
+
+.img-desktop {
+    display: none;
+}
+
+.img-mobile {
+    width: 100%;
+    height: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+    body {
+        display: flex;
+        flex-direction: row-reverse;
+
+        text-align: left;
+    }
+
+    .img-mobile {
+        display: none;
+    }
+
+    .img-desktop {
+        display: inline-block;
+        min-height: 100vh;
+        height: 100%;
+        width: auto;
+    }
+
+    .container {
+        flex-grow: 1;
+        background: url("./images/bg-pattern-desktop.svg") no-repeat;
+        background-size: cover;
+    }
+
+    .info {
+        width: 70%;
+        max-width: 700px;
+        height: 100%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+/*---------------------- Header ----------------------*/
+
+header {
+    padding: 7%;
+    text-align: left;
+}
+
+header img {
+    width: 30%;
+    height: auto;
+}
+
+@media only screen and (min-width: 1024px) {
+    header img {
+
+    }
+}
+
+/*---------------------- Text ----------------------*/
+
+main {
+    padding: 7%;
+}
+
+main h1 {
+    padding: 7% 0;
+    text-transform: uppercase;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 3.2rem;
+    letter-spacing: 0.8rem;
+}
+
+main h1 span {
+    font-weight: 700;
+    color: var(--darkGreyishRed);
+}
+
+form {
+    position: relative;
+    margin-top: 2rem;
+}
+
+form input {
+    border: 1px solid var(--desaturatedRed);
+    height: 3.5rem;
+    color: var(--darkGreyishRed);
+    background: none;
+    padding: 0 1.75rem;
+    width: 100%;
+    border-radius: 1.75rem;
+    outline: none;
+    font-weight: 700;
+    font-size: 1rem;
+    font-family: inherit;
+}
+
+form input::placeholder {
+    color: hsl(0, 40%, 85%);
+    font-weight: 400;
+}
+
+form button {
+    position: absolute;
+    height: 3.5rem;
+    width: 23%;
+    max-width: 6rem;
+    right: 0;
+    border-radius: 1.75rem;
+    border-style: none;
+    background: var(--gradient2);
+}
+
+form input::after {
+    /* position: relative; */
+    content: "Please provide a valid email";
+}
+
+@media only screen and (min-width: 1024px) {
+    main {
+        padding-top: 0;
+    }
+
+    main h1 {
+        font-size: 4rem;
+        line-height: 4.5rem;
+        letter-spacing: 1rem;
+        padding-top: 0;
+    }
+}
+
+/*---------------------- Attribution ----------------------*/
+
+.attribution {
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1rem;
+    margin: 2rem 7% 1rem;
+}
+
+.attribution a {
+    color: var(--darkGreyishRed);
+    text-decoration: none;
+}
+
+.attribution a:hover {
+    color: var(--softRed);
+}
