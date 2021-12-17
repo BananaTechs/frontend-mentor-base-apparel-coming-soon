@@ -48,8 +48,8 @@ body {
 
     .img-desktop {
         display: inline-block;
-        min-height: 100vh;
         height: 100%;
+        min-height: 100vh;
         width: auto;
     }
 
@@ -141,6 +141,15 @@ form button {
     border-radius: 1.75rem;
     border-style: none;
     background: var(--gradient2);
+    cursor: pointer;
+    box-shadow: 0 10px 20px hsl(0, 36%, 70%, 50%);
+    filter: none;
+    transition: 0.2s ease box-shadow, 0.2s ease filter;
+}
+
+form button:hover {
+    filter: brightness(130%);
+    box-shadow: 0 10px 20px hsl(0, 16%, 50%, 80%);
 }
 
 form input::after {
@@ -154,7 +163,7 @@ form input::after {
     }
 
     main h1 {
-        font-size: 4rem;
+        font-size: 400%;
         line-height: 4.5rem;
         letter-spacing: 1rem;
         padding-top: 0;
