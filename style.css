@@ -84,7 +84,7 @@ header img {
 
 @media only screen and (min-width: 1024px) {
     header img {
-
+        width: 9rem;
     }
 }
 
@@ -111,6 +111,7 @@ main h1 span {
 form {
     position: relative;
     margin-top: 2rem;
+    text-align: left;
 }
 
 form input {
@@ -138,6 +139,7 @@ form button {
     width: 23%;
     max-width: 6rem;
     right: 0;
+    top: 0;
     border-radius: 1.75rem;
     border-style: none;
     background: var(--gradient2);
@@ -152,9 +154,32 @@ form button:hover {
     box-shadow: 0 10px 20px hsl(0, 16%, 50%, 80%);
 }
 
-form input::after {
-    /* position: relative; */
-    content: "Please provide a valid email";
+form input:invalid {
+    border-color: var(--softRed);
+    border-width: 2px;
+}
+
+form div.error {
+    position: absolute;
+    right: 25%;
+    top: 0;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+}
+
+form p.error {
+    position: relative;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: var(--softRed);
+    padding: 0.5rem 0 0 1.75rem;
+}
+
+@media only screen and (min-width: 500px) {
+    form div.error {
+        right: 7rem;
+    }
 }
 
 @media only screen and (min-width: 1024px) {
@@ -167,6 +192,10 @@ form input::after {
         line-height: 4.5rem;
         letter-spacing: 1rem;
         padding-top: 0;
+    }
+
+    form div.error {
+        right: 7rem;
     }
 }
 
